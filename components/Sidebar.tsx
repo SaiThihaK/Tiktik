@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import {GoogleLogin} from "react-google-login"
 import {AiOutlineMenu,AiFillHome} from "react-icons/ai"
@@ -9,12 +10,15 @@ import SuggestedAccounts from './SuggestedAccounts';
 const Sidebar = () => {
 const [showSidebar,setShowSidebar] = useState(true);
 const sidebarToggler = ()=>setShowSidebar((prev)=>!prev);
+
 // CSS Long class
 const normalLink = "flex justify-center items-center xl:justify-start p-3 gap-3 text-semibold text-[#F51997] cursor-pointer hover:bg-primary rounded";
 
 
 // userlogin checked
 const userProfile = false;
+
+
   return (
     <div>
 <div className='block xl:hidden m-2 mt-3 ml-2 cursor-pointer'
@@ -43,7 +47,7 @@ onClick={sidebarToggler}
     {/* user login checked */}
     {
      !userProfile && (
-        <div className='xl:block hidden px-2 py-4 '>
+        <div className='hidden xl:block px-2 py-4 '>
             <p className='text-gray-400'>
                 Log in to like and comment on videos
             </p>
@@ -57,7 +61,8 @@ onClick={sidebarToggler}
                     <button 
                     onClick={renderProps.onClick} disabled={renderProps.disabled}
                     className="text-lg bg-white text-[#F51997]
-                    border-2 border-[#F51997] mt-3 px-6 py-3 w-full rounded hover:bg-[#F51997] hover:text-white
+                    hidden xl:block
+                    border-2 border-[#F51997] mt-3 px-6 py-2 w-full rounded hover:bg-[#F51997] hover:text-white
                     
                     "
                     >
@@ -67,11 +72,12 @@ onClick={sidebarToggler}
                 )}
                 />
             </div>
-            <Discover />
-            <SuggestedAccounts />
+           
         </div>
      )   
     }
+     <Discover />
+            <SuggestedAccounts />
     </div>
 }
 </div>
