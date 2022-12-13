@@ -5,6 +5,7 @@ import {GoogleLogin} from "react-google-login"
 import {AiOutlineMenu,AiFillHome} from "react-icons/ai"
 import { MdOutlineCancel } from 'react-icons/md';
 import Discover from './Discover';
+import Footer from './Footer';
 import SuggestedAccounts from './SuggestedAccounts';
 
 const Sidebar = () => {
@@ -77,7 +78,8 @@ onClick={sidebarToggler}
      )   
     }
      <Discover />
-            <SuggestedAccounts />
+    <SuggestedAccounts />
+    <Footer />
     </div>
 }
 </div>
