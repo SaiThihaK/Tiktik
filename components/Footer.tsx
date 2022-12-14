@@ -6,8 +6,8 @@ const List = ({items,mt}:{items:string[],mt:boolean})=>{
   return(
     <div className={`flex flex-wrap gap-2 ${mt? "mt-2":""}`}>
     {
-     items.map((item)=>(
-     <div className='text-gray-400 text-sm hover:underline cursor-pointer'>
+     items.map((item,index)=>(
+     <div className='text-gray-400 text-sm hover:underline cursor-pointer' key={index}>
     {item}
      </div>))
     }
