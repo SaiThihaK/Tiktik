@@ -54,7 +54,7 @@ onClick={sidebarToggler}
             </p>
             <div>
                 <GoogleLogin
-                clientId=''
+                clientId='304i90902'
                 onSuccess={()=>{}}
                 onFailure={()=>{}}
                 cookiePolicy="single_host_origin"

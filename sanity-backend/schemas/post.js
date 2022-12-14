@@ -28,8 +28,8 @@ export default{
             type:"postedBy"
         },
         {
-            name:"like",
-            title:"Like",
+            name:"likes",
+            title:"Likes",
             type:"array",
             of:[
                 {
@@ -39,8 +39,8 @@ export default{
             ]
         },
         {
-            name:"comment",
-            title:"Comment",
+            name:"comments",
+            title:"Comments",
             type:"array",
             of:[{
                 type:"reference",

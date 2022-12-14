@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
   <div className=''>
     <Navbar />
-    <div className='flex flex-col gap-6 md:gap-20'>
+    <div className='flex  gap-6 md:gap-20'>
     <div className='overflow-hidden xl:hover:overflow-auto h-[92vh]'>
      <Sidebar />
     </div>
