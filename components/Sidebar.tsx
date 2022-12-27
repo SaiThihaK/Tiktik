@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+
 import React, { useState } from 'react'
-import {GoogleLogin} from "react-google-login"
+import {GoogleLogin} from "@react-oauth/google"
 import {AiOutlineMenu,AiFillHome} from "react-icons/ai"
 import { MdOutlineCancel } from 'react-icons/md';
 import Discover from './Discover';
@@ -11,7 +11,6 @@ import SuggestedAccounts from './SuggestedAccounts';
 const Sidebar = () => {
 const [showSidebar,setShowSidebar] = useState(true);
 const sidebarToggler = ()=>setShowSidebar((prev)=>!prev);
-
 // CSS Long class
 const normalLink = "flex justify-center items-center xl:justify-start p-3 gap-3 text-semibold text-[#F51997] cursor-pointer hover:bg-primary rounded";
 
@@ -53,7 +52,7 @@ onClick={sidebarToggler}
                 Log in to like and comment on videos
             </p>
             <div>
-                <GoogleLogin
+                {/* <GoogleLogin
                 clientId='304i90902'
                 onSuccess={()=>{}}
                 onFailure={()=>{}}
@@ -71,6 +70,9 @@ onClick={sidebarToggler}
                     </button>
                 
                 )}
+                /> */}
+                <GoogleLogin
+                onSuccess={()=>{}}
                 />
             </div>
            

@@ -1,8 +1,10 @@
 import React from 'react'
-
-const NoResult = () => {
+interface Iprop{
+text:string
+}
+const NoResult = ({text}:Iprop) => {
   return (
-    <div>NoResult</div>
+    <div></div>
   )
 }
 
