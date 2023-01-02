@@ -52,7 +52,7 @@ onClick={sidebarToggler}
                 Log in to like and comment on videos
             </p>
             <div>
-                {/* <GoogleLogin
+                <GoogleLogin
                 clientId='304i90902'
                 onSuccess={()=>{}}
                 onFailure={()=>{}}
@@ -60,20 +60,16 @@ onClick={sidebarToggler}
                 render={(renderProps)=>(
                     <button 
                     onClick={renderProps.onClick} disabled={renderProps.disabled}
-                    className="text-lg bg-white text-[#F51997]
-                    hidden xl:block
-                    border-2 border-[#F51997] mt-3 px-6 py-2 w-full rounded hover:bg-[#F51997] hover:text-white
-                    
-                    "
+                    className="text-lg bg-white text-[#F51997] hidden xl:block border-2 border-[#F51997] mt-3 px-6 py-2 w-full rounded hover:bg-[#F51997] hover:text-white "
                     >
                     Log in
                     </button>
                 
                 )}
-                /> */}
-                <GoogleLogin
-                onSuccess={()=>{}}
                 />
+                {/* <GoogleLogin
+                onSuccess={()=>{}}
+                /> */}
             </div>
            
         </div>
