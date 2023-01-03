@@ -1,19 +1,35 @@
+import { SanityAssetDocument } from '@sanity/client';
 import React, { useState } from 'react'
 import { FaCloudUploadAlt } from 'react-icons/fa';
+import { client } from '../utils/client';
 
 const Upload = () => {
 const [loading,setLoading] = useState(false);
-const [videoAccesset,setVideoAccesset] = useState();
+const [videoAccesset,setVideoAccesset] = useState<SanityAssetDocument | undefined>();
 const [wrongFile,setWrongFile]  = useState(false)
 
-const uploadVideoHandler = (e:any)=>{
+const uploadVideoHandler = async(e:any)=>{
     const selectedFile = e.target.files[0];
-    const fileType = ["video/mv4",'vide/webm','video/ogg'];
-    if(fileType === selectedFile.type){
-    
-    }else{
-    setWrongFile(false)
-    }
+    const fileTypes = ['video/mp4', 'video/webm', 'video/ogg'];
+    console.log(selectedFile)
+   
+    // if(fileTypes.includes(selectedFile.type)){
+    // setWrongFile(false);
+    // setLoading(true);
+    // try{
+    // const res = await client.assets.upload('file',selectedFile,{
+    //     contentType:selectedFile.type,
+    //     filename:selectedFile.name
+    // });
+    // setVideoAccesset(res);
+    // setLoading(false);
+    // }catch(err){
+    //     console.log(err)
+    // }
+    // }else{
+    // setWrongFile(false);
+    // return;
+    // }
 }
   return (
     <div className='flex w-full h-full absolute left-0 top-[60px] lg:top-[70px] mb-5 pt-5 lg:pt-10 bg-[#F8F8F8] justify-center'>
@@ -31,7 +47,7 @@ const uploadVideoHandler = (e:any)=>{
             ) :(<div>
               {
                 videoAccesset ? (<div>
-
+                 I got Video
                 </div>):(
                 <label className='flex flex-col items-center justify-center w-full h-full'>
                 <div className='flex flex-col items-center justify-center w-full h-full'>
@@ -47,7 +63,7 @@ const uploadVideoHandler = (e:any)=>{
                 <p className='bg-[#F51997] text-center mt-8 rounded text-white text-md font-medium p-2 w-52 outline-none'>
                         Select file
                 </p>
-                <input type="file" name="upload-video" className="w-0 h-0" onClick={(e)=>uploadVideoHandler(e)}/>
+                <input type="file" name="upload-video"  className="w-0 h-0" onClick={uploadVideoHandler}/>
                 </label>) 
               }
             </div>)
