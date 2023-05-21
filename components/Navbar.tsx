@@ -11,7 +11,7 @@ import {AiOutlineLogout}from "react-icons/ai"
 const Navbar = () => {
  
   const {userProfile,addUser,removeUser} = useAuthStore();
-  console.log("userProfile",userProfile);
+ 
   return ( 
     <div className='w-full flex justify-between border-b-2 border-gray-200 py-2 px-4'>
         <Link href="/">

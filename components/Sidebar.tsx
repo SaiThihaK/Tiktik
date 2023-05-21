@@ -51,7 +51,10 @@ onClick={sidebarToggler}
             <p className='text-gray-400'>
                 Log in to like and comment on videos
             </p>
-            <div>
+            <button className="p-3 w-[100%] text-[#F51997] rounded-none border-[#F51997] border-solid border-2 hover:bg-[#F51997] hover:text-white">
+                Login
+            </button>
+            {/* <div>
                 <GoogleLogin
                 clientId='304i90902'
                 onSuccess={()=>{}}
@@ -69,8 +72,8 @@ onClick={sidebarToggler}
                 />
                 {/* <GoogleLogin
                 onSuccess={()=>{}}
-                /> */}
-            </div>
+                /> 
+            </div> */}
            
         </div>
      )   

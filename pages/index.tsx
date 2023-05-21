@@ -11,7 +11,7 @@ interface Iprop  {
 
 
 export default function Home({videos}:Iprop) {
-  console.log(videos)
+
   return (
     <div>
       <Head>
@@ -33,7 +33,6 @@ export default function Home({videos}:Iprop) {
 
 export const getServerSideProps = async()=>{
   const {data} = await axios.get("http://localhost:3000/api/post");
-  console.log(data);
   return{
     props:{videos:data}
   }
